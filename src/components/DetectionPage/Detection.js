@@ -6,7 +6,7 @@ export default function Detection() {
 
     return (
         <div className={classes.root}>
-            
+            Hi
         </div>
     )
 }
