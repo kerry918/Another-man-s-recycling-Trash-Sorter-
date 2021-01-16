@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+This web application is designed and implemented utilizing Microsoft Azure Custom Vision API to identify different trash into categories. The frontend UI Interface is built with JavaScrip (React Framework) with Material UI. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
