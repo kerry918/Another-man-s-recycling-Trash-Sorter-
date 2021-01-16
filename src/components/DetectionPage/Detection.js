@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react'; 
+import useStyles from './Detection-jss'; 
 
 export default function Detection() {
+    const classes = useStyles(); 
+
     return (
-        <div>
+        <div className={classes.root}>
             
         </div>
     )

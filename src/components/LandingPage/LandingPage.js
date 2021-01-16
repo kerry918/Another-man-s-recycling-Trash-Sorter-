@@ -13,13 +13,14 @@ import { Typography } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Drawer from '@material-ui/core/Drawer';
 
-
-import ImageIcon from '@material-ui/icons/Image';
-import WorkIcon from '@material-ui/icons/Work';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
 import ListIcon from '@material-ui/icons/List';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
+import Rishi from '../../images/Rishi.png'; 
+import Kellin from '../../images/Kellin.png'; 
+import Calbee from '../../images/Calbee.png'; 
+import Machi from '../../images/Machi.png'; 
 
 
 
@@ -38,10 +39,12 @@ export default function LandingPage() {
     };
     return (
         <div className={classes.root}>
-            <section className={clsx(classes.main, {
+            <div className={clsx(classes.main, {
                 [classes.mainShift]: open,
                 })}>
+                
                 <Typography variant="h3" className={classes.title}>Trash Sorter</Typography>
+                 
                 <div className={classes.header}>
                     <IconButton
                         color="inherit"
@@ -73,7 +76,7 @@ export default function LandingPage() {
                         </a>
                     </div>
                 </div>
-            </section>
+            </div>
 
             <Drawer
                 className={classes.drawer}
@@ -89,45 +92,39 @@ export default function LandingPage() {
                     {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                 </IconButton>
                 </div>
-                <Typography variant="h4">Frontend</Typography>
-                <List>
-                    <ListItem>
-                        <ListItemAvatar>
-                        <Avatar>
-                            <BeachAccessIcon />
-                        </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary="Nadine" secondary="July 20, 2014" />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemAvatar>
-                        <Avatar>
-                            <BeachAccessIcon />
-                        </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary="Kerry" secondary="July 20, 2014" />
-                    </ListItem>
-                </List>
+                <div className={classes.side}>
+                    <Typography variant="h4">Frontend</Typography>
+                    <List>
+                        <ListItem>
+                            <ListItemAvatar>
+                            <Avatar src={Calbee}/>
+                            </ListItemAvatar>
+                            <ListItemText primary="Nadine Lin"/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemAvatar>
+                            <Avatar src={Machi}/>
+                            </ListItemAvatar>
+                            <ListItemText primary="Kerry Liu"/>
+                        </ListItem>
+                    </List>
 
-                <Typography variant="h4">Backend</Typography>
-                <List>
-                    <ListItem>
-                        <ListItemAvatar>
-                        <Avatar>
-                            <ImageIcon />
-                        </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary="Lily" secondary="Jan 9, 2014" />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemAvatar>
-                        <Avatar>
-                            <WorkIcon />
-                        </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary="Rishi" secondary="Jan 7, 2014" />
-                    </ListItem>
-                </List>
+                    <Typography variant="h4">Backend</Typography>
+                    <List>
+                        <ListItem>
+                            <ListItemAvatar>
+                            <Avatar src={Kellin}/>
+                            </ListItemAvatar>
+                            <ListItemText primary="Lily Tao"/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemAvatar>
+                            <Avatar src={Rishi}/>
+                            </ListItemAvatar>
+                            <ListItemText primary="Rishi Vimalendran"/>
+                        </ListItem>
+                    </List>
+                </div>
             </Drawer>
         </div>
     )

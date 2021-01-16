@@ -13,12 +13,10 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute', 
         right: 0, 
         width: '100%', 
-        minHeight: '100vh', 
-        padding: '100px', 
+        minHeight: '100vh',  
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center', 
-        background:'#111', 
         color:'#fff', 
         zIndex: '2', 
     }, 
@@ -29,6 +27,11 @@ const useStyles = makeStyles((theme) => ({
           easing: theme.transitions.easing.easeOut,
           duration: theme.transitions.duration.enteringScreen,
         }),
+        minHeight: '100vh',   
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
+        zIndex: '2', 
     },
     header:{
         position: 'absolute', 
@@ -43,19 +46,17 @@ const useStyles = makeStyles((theme) => ({
     toggle:{
         width: '60px', 
         height: '60px', 
-        size: '30px', 
+        size: '40px', 
         position: 'center', 
         cursor: 'pointer', 
     }, 
     title:{
         position: 'absolute',
-        // top: '25%',
-        // left: '40%',
         width: '471px',
         height: '77px',
-        left: '35%',
+        left: '40%',
         top: '161px',
-        fontWeight: 'bold',
+        fontWeight: 600,
         fontSize: '72px',
         lineHeight: '108px',
         alignItems: 'center', 
@@ -67,9 +68,13 @@ const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
+        
     },
     drawerPaper: {
         width: drawerWidth,
+        background: '#DBDFDF', 
+        color: '#5C4A33', 
+        
     },
     drawerHeader: {
         display: 'flex',
@@ -83,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute', 
         top: 0, 
         left: 0,
+        right: 0,
         width: '100%', 
         height: '100%', 
         objectFit: 'cover', 
@@ -130,6 +136,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around', 
         alignContent: 'space-around',
         margin: '90px 0px'
+    }, 
+    side: {
+        padding: '30px'
     }
 }));
 
