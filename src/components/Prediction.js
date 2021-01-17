@@ -13,9 +13,11 @@ class Prediction extends Component {
   }
   state = {
     tagText: "trash sorter",
+    data: [],
+    imageUpload: "",
   };
 
-  async sendToImgur() {
+  async sendToImgur(photoLoc) {
     try {
       // Use Image Manipulator to downsize image
       // let manipulatedObj = await ImageManipulator.manipulateAsync(
@@ -26,14 +28,6 @@ class Prediction extends Component {
       // );
       var xmlHttp = new XMLHttpRequest();
       const data = new FormData();
-      const e = document.getElementsByClassName("input-image");
-
-      data.append("image", e);
-
-      xmlHttp.open("POST", "https://api.imgur.com/3/image/");
-      xmlHttp.setRequestHeader("Authorization", "Client-ID " + IMGUR_API_ID);
-      //data.append("type", "base64");
-
       xmlHttp.onreadystatechange = (e) => {
         if (xmlHttp.readyState === 4) {
           if (xmlHttp.status === 200) {
@@ -46,28 +40,45 @@ class Prediction extends Component {
           }
         }
       };
-
+      xmlHttp.open("POST", "https://api.imgur.com/3/upload", true);
+      xmlHttp.setRequestHeader("Authorization", "Client-ID " + IMGUR_API_ID);
+      data.append("type", "base64");
+      data.append("image", photoLoc.base64);
       xmlHttp.send(data);
     } catch (error) {
       console.error(error);
     }
   }
 
-  async sendToMicrosoftPrediction(img_url) {
-    let response = await fetch(PREDICTION_URL, {
+  sendToMicrosoftPrediction = async (img_url) => {
+    let data = await fetch(PREDICTION_URL, {
       method: "POST",
       headers: {
         "Prediction-Key": PREDICTION_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        Url: img_url,
+        Url: "https://i.imgur.com/wVVZMLt.jpg",
       }),
-    });
-    let bodyText = JSON.parse(response["_bodyText"]);
-    let predictions = bodyText["predictions"];
-    this.setNewPrediction(predictions);
-  }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          data: data,
+        });
+        console.log("this is the json data", data);
+      });
+    //let predictions = bodyText["predictions"];
+    //this.setNewPrediction(predictions);
+  };
+
+  logState = () => {
+    console.log(this.state);
+  };
+  parseJson = (response) => {
+    let bodyText = response;
+    console.log(bodyText);
+  };
 
   setNewPrediction = (predictions) => {
     let maxProb = 0;
@@ -91,20 +102,28 @@ class Prediction extends Component {
     this.sendToImgur(img);
   };
   render() {
+    console.log(this.state);
     return (
       <div>
         <div>trash sorter</div>
         <div>
-          {/* <FileBase
+          <FileBase
             type="file"
             multiple={false}
-            onDone={({ base64 }) => this.sendToImgur(base64)}
-          /> */}
-          <input
+            onDone={({ base64 }) => {
+              base64 = base64.split(",").pop();
+              this.setState({
+                imageUpload: base64,
+              });
+              this.sendToImgur(base64);
+            }}
+          />
+          {/* <input
             type="file"
             className="input-image"
-            onChange={this.sendToImgur.bind(this)}
-          />
+            onChange={this.sendToMicrosoftPrediction.bind(this)}
+          /> */}
+          <div></div>
         </div>
       </div>
     );
