@@ -63,6 +63,7 @@ class Prediction extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
+        this.props.onPrediction(data);
         this.setState({
           data: data,
         });
@@ -105,7 +106,6 @@ class Prediction extends Component {
     console.log(this.state);
     return (
       <div>
-        <div>trash sorter</div>
         <div>
           <FileBase
             type="file"
