@@ -12,6 +12,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { Typography } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Drawer from '@material-ui/core/Drawer';
+import Grid from '@material-ui/core/Grid';
 
 import ListIcon from '@material-ui/icons/List';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -42,9 +43,6 @@ export default function LandingPage() {
             <div className={clsx(classes.main, {
                 [classes.mainShift]: open,
                 })}>
-                
-                <Typography variant="h3" className={classes.title}>Trash Sorter</Typography>
-                 
                 <div className={classes.header}>
                     <IconButton
                         color="inherit"
@@ -56,26 +54,33 @@ export default function LandingPage() {
                         <ListIcon className={classes.toggle}/>
                     </IconButton>
                 </div>
-                
                 <video src={Video} muted loop autoPlay className={classes.video}></video>
                 <div className={classes.overlay}></div>
-                <div className={classes.text}>
-                    {/* <Typography variant="h3">Little Step</Typography>
-                    <Typography variant="h4">Save the world! </Typography> */}
-                    <Typography variant="p" className={classes.desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum 
-                    quis leo nec massa mollis elementum vel at nunc. In id nisi eget enim fringilla 
-                    suscipit id congue ex. In consectetur a metus</Typography>
-                    <br/>
-                    <div className={classes.buttonGroup}>
-                        <a href="/" className={classes.button}>Identify</a>
-                        <a href="https://www.toronto.ca/wp-content/uploads/2018/01/8f02-98b3-A1504070_-PutWasteInPlace_poster_11x17V_6-AODA.pdf" 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className={classes.button}>
-                                Learn More
-                        </a>
-                    </div>
-                </div>
+
+                <Grid container spacing={3}>
+                    <Grid item sm={12}>
+                        <Typography variant="h3" className={classes.title}>Trash Sorter</Typography>
+                    </Grid>
+                    <Grid item sm={12}>
+                        <div className={classes.text}>
+                            {/* <Typography variant="h3">Little Step</Typography>
+                            <Typography variant="h4">Save the world! </Typography> */}
+                            <Typography variant="p" className={classes.desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum 
+                            quis leo nec massa mollis elementum vel at nunc. In id nisi eget enim fringilla 
+                            suscipit id congue ex. In consectetur a metus</Typography>
+                            <br/>
+                            <div className={classes.buttonGroup}>
+                                <a href="/detection" className={classes.button}>Identify</a>
+                                <a href="https://www.toronto.ca/wp-content/uploads/2018/01/8f02-98b3-A1504070_-PutWasteInPlace_poster_11x17V_6-AODA.pdf" 
+                                    target="_blank" 
+                                    rel="noreferrer" 
+                                    className={classes.button}>
+                                        Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </Grid>
+                </Grid>
             </div>
 
             <Drawer

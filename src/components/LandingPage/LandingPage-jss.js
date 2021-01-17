@@ -5,7 +5,6 @@ const drawerWidth = 400;
 const useStyles = makeStyles((theme) => ({
     root:{
         fontFamily:"Poppins, sans-serif", 
-        boxSizing: 'border-box',
         margin: 0, 
         padding: 0, 
     },
@@ -14,8 +13,6 @@ const useStyles = makeStyles((theme) => ({
         right: 0, 
         width: '100%', 
         minHeight: '100vh',  
-        display: 'flex', 
-        justifyContent: 'space-between', 
         alignItems: 'center', 
         color:'#fff', 
         zIndex: '2', 
@@ -52,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     }, 
     title:{
         position: 'absolute',
+        fontFamily: 'Poppins',
         width: '471px',
         height: '77px',
         left: '40%',
@@ -101,13 +99,16 @@ const useStyles = makeStyles((theme) => ({
         background: 'rgba(0, 0, 0, 0.2)', 
     }, 
     text: {
-        position: 'relative', 
+        position: 'absolute', 
         zIndex: 10, 
         marginTop: '60px',
         maxWidth: '790px',
         minWidth: '790px',
         textAlign: 'center', 
-        left: '20%'
+        justifyContent: 'center', 
+        justifyItems: 'center', 
+        left: '25%', 
+        bottom: '25%'
     }, 
     desc: {
         height: '20%',
