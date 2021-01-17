@@ -23,8 +23,6 @@ import Kellin from '../../images/Kellin.png';
 import Calbee from '../../images/Calbee.png'; 
 import Machi from '../../images/Machi.png'; 
 
-
-
 export default function LandingPage() {
 
     const classes = useStyles(); 
@@ -65,9 +63,12 @@ export default function LandingPage() {
                         <div className={classes.text}>
                             {/* <Typography variant="h3">Little Step</Typography>
                             <Typography variant="h4">Save the world! </Typography> */}
-                            <Typography variant="p" className={classes.desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum 
-                            quis leo nec massa mollis elementum vel at nunc. In id nisi eget enim fringilla 
-                            suscipit id congue ex. In consectetur a metus</Typography>
+                            <Typography variant="p" className={classes.desc}>
+                                It makes a big difference to recycle. It makes a big difference to use recycled 
+                                products. It makes a big difference to reuse things to not use the paper cup - 
+                                and each time you do, that’s a victory. 
+                                - Emily Deschanel
+                            </Typography>
                             <br/>
                             <div className={classes.buttonGroup}>
                                 <a href="/detection" className={classes.button}>Identify</a>
