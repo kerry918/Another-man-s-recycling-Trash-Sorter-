@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+This project is completed in Hack The North 2021 (Jan15-17.2021)
+
 This web application is designed and implemented utilizing Microsoft Azure Custom Vision API to identify different trash into categories. The frontend UI Interface is built with JavaScrip (React Framework) with Material UI. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
