@@ -7,6 +7,15 @@ This web application is designed and implemented utilizing Microsoft Azure Custo
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Inspiration
+The large amount of recycling that is thrown in the garbage, and the large amount of garbage that contaminates recycling.
+
+## What it does
+The application takes a picture of garbage and returns what type of garbage it most probably is based on a machine learning model.
+
+## How we built it
+Built using the React framework. Used the Custom Vision training API to train a model of various types of garbage. Used the Imgur API to send a image URL to the Custom Vision prediction API to have the model make a prediction
+
 ## Available Scripts
 
 In the project directory, you can run:
